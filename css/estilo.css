@@ -1,0 +1,31 @@
+.container {
+    height: 400px;
+    width: 220px;
+    position: relative;
+    margin-left: auto; 
+    margin-right: auto;
+    perspective: 1000px;
+}
+
+.frente, .verso {
+    position: absolute;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transition: all 1s ease;
+}
+
+.frente {
+    transform: rotateY(0deg);
+}
+
+.verso {
+    transform: rotateY(180deg);
+}
+
+.container:hover .frente {
+    transform: rotateY(-180deg);
+}
+
+.container:hover .verso {
+    transform: rotateY(0deg);
+}
